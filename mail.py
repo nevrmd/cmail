@@ -20,7 +20,13 @@ def main():
                 config = configparser.ConfigParser()
                 config.read("config.ini")
                 sender_email = config["Sender"]["email"]
+                if sender_email in ["", " "]:
+                    print("[bold red]Please, type your email in config.ini")
+                    break
                 sender_password = config["Sender"]["password"]
+                if sender_password in ["", " "]:
+                    print("[bold red]Please, type your password in config.ini")
+                    break
                 sender_host = config["SMTP"]["host"]
                 sender_port = config["SMTP"]["port"]
                 # showing this information
@@ -72,6 +78,7 @@ def main():
                     
                     except ValueError:
                         print("[bold red]Please, type number.")
+                        
                     else:
                         if service == 1:
                             host = "smtp.gmail.com"
