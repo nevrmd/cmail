@@ -65,7 +65,7 @@ def main():
                     print(f"[bold red]some error occured\n")
 
             elif choice == 2:
-                print("1 - [cyan]Gmail[/cyan] (default)\n2 - [cyan]Mail.ru[/cyan]\n3 - [red]Back[/red]\n")
+                print("1 - [cyan]Gmail[/cyan] (default)\n2 - [cyan]Mail.ru[/cyan]\n3 - [cyan]Yahoo![/cyan]\n3 - [cyan]AOL[/cyan]\n5 - [red]Back[/red]\n")
                 while True:
                     try:
                         service = int(input(">>> "))
@@ -84,6 +84,16 @@ def main():
                             all_ok = True
                         
                         elif service == 3:
+                            host = "smtp.mail.yahoo.com"
+                            port = "465"
+                            all_ok = True
+                        
+                        elif service == 4:
+                            host = "smtp.aol.com"
+                            port = "587"
+                            all_ok = True
+                        
+                        elif service == 5:
                             print("[bold red]Aborting...")
                             break
                         
